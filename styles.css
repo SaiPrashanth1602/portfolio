@@ -1,0 +1,164 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        background-image: url(home_bg.png);
+        background-size: cover;
+        background-color: whitesmoke;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    main {
+        margin: 0 20px;
+    }
+
+    /* Navbar container */
+    .navbar {
+        background-color: #0A0A0A;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Flex layout for nav items */
+    .navbar ul {
+        display: flex;
+        list-style: none;
+        padding: 0 30px;
+        height: 60px;
+        /* fixed navbar height */
+    }
+
+    /* Logo item (left) */
+    .navbar li.logo {
+        margin-right: auto;
+        padding-left: 50px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    /* Each list item fills navbar height */
+    .navbar li {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+    }
+
+    /* Nav links */
+    .navbar a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #0A0A0A;
+        height: 80%;
+        /* ✅ fills navbar vertically */
+        padding: 0 20px;
+        /* horizontal padding only */
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+
+    /* Logo image */
+    .navbar a img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Hover effect */
+    /* Hover effect only for links that are NOT logo */
+    .navbar li:not(.logo) a:hover {
+        background-color: #e8e3db;
+        color: #0A0A0A;
+    }
+
+    .photo-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: calc(100vh - 60px);
+        padding: 0 40px;
+        text-align: center;
+    }
+
+    .intro {
+        width: 30%;
+
+        margin-top: 20px;
+        /* optional small tweak */
+    }
+
+    .intro,
+    .details {
+        width: 30%;
+    }
+
+    .photo img {
+        width: 410px;
+        /* keep your desired size */
+        height: 450px;
+        /* make it square for a perfect circle */
+        border-radius: 50%;
+        /* makes the image circular */
+        object-fit: cover;
+        /* ensures the image fills the circle without distortion */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #444;
+    }
+
+    .intro h2,
+    .details h3 {
+        margin-bottom: 10px;
+        /* creates space below headings */
+    }
+
+    .intro p,
+    .details p {
+        line-height: 1.5;
+        /* improves readability */
+    }
+
+    .social-links {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 35px;
+        /* size of icon */
+        height: 35px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-links a img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .social-links a:hover {
+        transform: scale(1.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
