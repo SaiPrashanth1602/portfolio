@@ -1,58 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <title>PORTFOLIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
     <nav class="navbar">
-        <ul>
-            <li class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
+
+        <!-- Mobile Left: Hamburger -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Right Logo -->
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+
+        <!-- Slide-in Side Menu -->
+        <ul class="side-menu">
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+
+        
+
     </nav>
 
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const sideMenu = document.querySelector(".side-menu");
+
+        hamburger.addEventListener("click", () => {
+            sideMenu.classList.toggle("active");
+        });
+    </script>
+
     <main>
+    <div class="photo-section">
 
-        <div class="photo-section">
-            <div class="intro">
-                <h2>Sai Prashanth Ramesh</h2>
-                <p>A Software Engineering student at VIT Chennai, passionate about creating engaging digital
-                    experiences.</p>
-                <div class="social-links">
-                    <a href="www.linkedin.com/in/saiprashanth1602" target="_blank" class="social-link linkedin">
-                        <img src="linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/SaiPrashanth1602" target="_blank" class="social-link github">
-                        <img src="github.png" alt="GitHub">
-                    </a>
-                    
-                </div>
+        <!-- Left Text -->
+        <div class="intro">
+            <h2>Sai Prashanth Ramesh </h2>
+            <br>
+            <p>A Software Engineering student at VIT Chennai, passionate about creating engaging digital
+                experiences.</p>
 
-
-            </div>
-
-            <div class="photo">
-                <img src="myphoto.png" alt="Sai Prashanth">
-            </div>
-
-            <div class="details">
-                <h3>Web Developer</h3>
-                <p>I enjoy building clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript.
-                    My goal is to create interfaces that are not only functional but also visually engaging and easy
-                    to use.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank" class="social-link">
+                    <img src="linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/SaiPrashanth1602" target="_blank" class="social-link">
+                    <img src="github.png" alt="GitHub">
+                </a>
             </div>
         </div>
 
+        <!-- Center Photo -->
+        <div class="photo">
+            <img src="myphoto.png" alt="Sai Prashanth">
+        </div>
 
+        <!-- Right Text -->
+        <div class="details">
+            <h3>Web Developer</h3>
+            <br>
+            <p>I enjoy building clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript.
+                My goal is to create interfaces that are not only functional but also visually engaging and easy
+                to use.</p>
+        </div>
 
-    </main>
+    </div>
+</main>
+
 </body>
 
 </html>
