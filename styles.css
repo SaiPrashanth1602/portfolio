@@ -83,7 +83,7 @@ body {
 .details {
     max-width: 300px;
     text-align: center;
-
+    color: silver;
 }
 
 .intro h2 {
@@ -117,12 +117,18 @@ body {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    padding: 4px;
+    background: rgb(161, 228, 243);
+    border-radius: 6px;
     transition: 0.3s;
 }
 
+
 .social-links img:hover {
     transform: scale(1.1);
+    background: rgb(109, 158, 169);
 }
+
 
 /* --------------------------
    PHOTO WITH CONIC BORDER
@@ -147,12 +153,10 @@ body {
     position: absolute;
     inset: -14px;
     border-radius: 60px;
-    background: linear-gradient(
-    135deg,
-    rgba(0,229,255,0.9),
-    rgba(0,151,167,0.7),
-    rgba(0,77,64,0.6)
-);
+    background: linear-gradient(135deg,
+            rgba(0, 229, 255, 0.9),
+            rgba(0, 151, 167, 0.7),
+            rgba(0, 77, 64, 0.6));
 
 
     filter: blur(18px);
