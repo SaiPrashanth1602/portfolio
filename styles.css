@@ -156,10 +156,12 @@ body {
     position: absolute;
     inset: -14px;
     border-radius: 60px;
-    background: linear-gradient(135deg,
-            rgba(0, 229, 255, 0.9),
-            rgba(0, 151, 167, 0.7),
-            rgba(0, 77, 64, 0.6));
+    background: linear-gradient(
+        135deg,
+        rgba(0, 229, 255, 0.9),
+        rgba(0, 151, 167, 0.7),
+        rgba(0, 77, 64, 0.6)
+    );
     filter: blur(18px);
     opacity: 0.75;
     z-index: 0;
@@ -175,16 +177,19 @@ body {
 }
 
 /* --------------------------
-   SIDE MENU SOCIALS (HIDDEN ON DESKTOP)
+   MOBILE-ONLY ELEMENTS (DESKTOP HIDDEN)
 --------------------------- */
 .menu-socials {
     display: none;
 }
 
 .side-menu .mobile-only {
-    display: none !important;
+    display: none;
 }
 
+.navbar .menu-socials {
+    display: none;
+}
 
 /* --------------------------
    MOBILE & TABLET
@@ -195,21 +200,7 @@ body {
         padding: 0 20px;
     }
 
-    .menu-socials {
-        margin-top: auto;
-    }
-
-    .side-menu .mobile-only {
-        display: flex !important;
-    }
-
-    .menu-socials .social-links img {
-        background: rgba(0, 176, 246, 0.35);
-        padding: 4px;
-        border-radius: 6px;
-        border: none;
-    }
-
+    /* Hamburger */
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -228,6 +219,7 @@ body {
         border-radius: 3px;
     }
 
+    /* Logo */
     .logo {
         position: absolute;
         right: 20px;
@@ -273,41 +265,44 @@ body {
         text-align: center;
     }
 
-    /* Show socials at bottom of side menu */
+    /* Mobile-only Home */
+    .side-menu .mobile-only {
+        display: flex;
+    }
+
+    /* Social icons at bottom of side menu */
     .menu-socials {
         display: block;
         margin-top: auto;
+        width: 100%;
     }
 
-    /* REMOVE styles from side-menu social icons */
-    .menu-socials .social-links img {
-    width: 30px;
-    height: 30px;
-    padding: 4px;
-    background: rgba(0, 176, 246, 0.5);
-    border-radius: 6px;
-    border: none;
-    transition: 0.3s;
-}
-
-.menu-socials .social-links img:hover {
-    transform: scale(1.1);
-    background: rgba(0, 176, 246, 0.8);
-}
-
-.menu-socials .social-links {
+    .menu-socials .social-links {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
-.menu-socials a {
-    padding: 0;
-    border: none;
-    outline: none;
-    background: none;
-}
 
+    .menu-socials a {
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
+    .menu-socials .social-links img {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        background: rgba(0, 176, 246, 0.5);
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .menu-socials .social-links img:hover {
+        transform: scale(1.1);
+        background: rgba(0, 176, 246, 0.8);
+    }
 
     /* Hide hero socials on mobile */
     .photo-section .social-links {
@@ -330,7 +325,9 @@ body {
         width: 220px;
         height: 300px;
     }
-
+.navbar .menu-socials {
+    display: block;
+}
     .photo::before {
         inset: -8px;
         filter: blur(12px);
