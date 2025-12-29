@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <title>Contact | Sai Prashanth</title>
 
     <link rel="stylesheet" href="styles.css">
     <link
@@ -14,6 +14,7 @@
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="hamburger">
@@ -39,23 +40,84 @@
             <li class="menu-socials">
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn">
+                        <img src="linkedin.png">
                     </a>
                     <a href="https://github.com/SaiPrashanth1602" target="_blank">
-                        <img src="github.png" alt="GitHub">
+                        <img src="github.png">
                     </a>
-                    <a href="mailto:saiprashanth.m.ramesh@gmail.com" target="_blank">
-                        <img src="gmail.png" alt="Email">
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com">
+                        <img src="gmail.png">
                     </a>
                 </div>
             </li>
-
         </ul>
 
     </nav>
 
-    
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
 
+        <div class="contact-card">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-left">
+                <h2>Get in Touch</h2>
+                <p class="contact-subtitle">I’d love to hear from you!</p>
+
+                <p class="contact-text">
+                    If you have any inquiries, project ideas, or just want to say hi,
+                    feel free to reach out using the form.
+                </p>
+
+                <p class="contact-email">
+                    📧 saiprashanth.m.ramesh@gmail.com
+                </p>
+
+                <p class="contact-email">
+                    📞 +91 99400 36086
+                </p>
+
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
+                        <img src="linkedin.png">
+                    </a>
+                    <a href="https://github.com/SaiPrashanth1602" target="_blank">
+                        <img src="github.png">
+                    </a>
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com">
+                        <img src="gmail.png">
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <form
+  class="contact-form"
+  id="contactForm"
+  action="https://formspree.io/f/mregrkrv"
+  method="POST"
+>
+  <div class="form-row">
+    <input type="text" name="firstName" placeholder="First Name" required>
+    <input type="text" name="lastName" placeholder="Last Name" required>
+  </div>
+
+  <input type="email" name="email" placeholder="Email" required>
+
+  <textarea name="message" placeholder="Message" rows="5" required></textarea>
+
+  <button type="submit">Send</button>
+  <p class="form-status" id="formStatus"></p>
+</form>
+
+
+
+        </div>
+
+    </section>
+
+    <!-- HAMBURGER SCRIPT -->
     <script>
         const hamburger = document.querySelector(".hamburger");
         const sideMenu = document.querySelector(".side-menu");
@@ -64,6 +126,40 @@
             sideMenu.classList.toggle("active");
         });
     </script>
+
+    <script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Message sent successfully!";
+        status.style.color = "#22c55e";
+        form.reset();
+      } else {
+        status.textContent = "❌ Something went wrong. Try again.";
+        status.style.color = "#ef4444";
+      }
+    } catch (error) {
+      status.textContent = "❌ Network error. Please try later.";
+      status.style.color = "#ef4444";
+    }
+  });
+</script>
+
 
 </body>
 
