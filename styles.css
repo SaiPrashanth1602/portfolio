@@ -5,9 +5,10 @@
 }
 
 body {
+    min-height: 100vh;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background-image: url("bg.jpg");
     background-repeat: no-repeat;
+    background-image: url(bg.jpg);
     background-size: cover;
     background-position: center;
     line-height: 1.2;
@@ -22,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 60px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,7 +34,7 @@ body {
 
 .logo img:hover {
     transform: scale(0.9);
-    outline: 3px solid beige;
+    outline: 3px solid rgb(20, 237, 227);
     border-radius: 5px;
 }
 
@@ -59,13 +60,17 @@ body {
 
 .side-menu a:hover {
     transform: scale(0.9);
-    outline: 3px solid beige;
+    outline: 3px solid rgb(20, 237, 227);
     border-radius: 5px;
 }
 
 .hamburger {
-    display: none;
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    z-index: 1001;
 }
+
 
 /* --------------------------
    HERO SECTION
@@ -83,19 +88,21 @@ body {
 .details {
     max-width: 300px;
     text-align: center;
-    color: silver;
+    color: #b8c1c8;
 }
 
 .intro h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #f1f5f9;
 }
 
 .details h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #e5e7eb;
 }
 
 .intro p,
@@ -118,20 +125,18 @@ body {
     height: 30px;
     cursor: pointer;
     padding: 4px;
-    background: rgb(161, 228, 243);
+    background: rgba(0, 176, 246, 0.5);
     border-radius: 6px;
     transition: 0.3s;
 }
 
-
 .social-links img:hover {
     transform: scale(1.1);
-    background: rgb(109, 158, 169);
+    background: rgba(0, 176, 246, 0.8);
 }
 
-
 /* --------------------------
-   PHOTO WITH CONIC BORDER
+   PHOTO GLOW (NO BORDER, NO SHADOW BUG)
 --------------------------- */
 .photo {
     position: relative;
@@ -145,7 +150,7 @@ body {
     border-radius: 50px;
     object-fit: cover;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .photo::before {
@@ -153,28 +158,25 @@ body {
     position: absolute;
     inset: -14px;
     border-radius: 60px;
-    background: linear-gradient(135deg,
-            rgba(0, 229, 255, 0.9),
-            rgba(0, 151, 167, 0.7),
-            rgba(0, 77, 64, 0.6));
-
-
+    background: linear-gradient(
+        135deg,
+        rgba(0, 229, 255, 0.9),
+        rgba(0, 151, 167, 0.7),
+        rgba(0, 77, 64, 0.6)
+    );
     filter: blur(18px);
-    opacity: 0.85;
-    z-index: 1;
+    opacity: 0.75;
+    z-index: 0;
 }
 
-.photo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50px;
-    background: black;
-    z-index: 1;
+/* --------------------------
+   TEXT CONTAINERS
+--------------------------- */
+.text-box {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 25px 22px;
+    border-radius: 18px;
 }
-
-
-
 
 /* --------------------------
    MOBILE & TABLET
@@ -183,13 +185,19 @@ body {
 
     .navbar {
         padding: 0 20px;
+        position: relative;
     }
 
+    /* Hamburger stays LEFT */
     .hamburger {
         display: flex;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        z-index: 1002;
     }
 
     .hamburger span {
@@ -199,6 +207,19 @@ body {
         border-radius: 3px;
     }
 
+    /* Logo moves to RIGHT */
+    .logo {
+        position: fixed;
+        top: 5px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    /* Side menu */
     .side-menu {
         position: fixed;
         top: 0;
@@ -210,13 +231,14 @@ body {
         padding: 80px 20px;
         gap: 20px;
         transition: 0.3s;
-        z-index: 999;
+        z-index: 1000;
     }
 
     .side-menu.active {
         left: 0;
     }
 
+    /* Hero layout */
     .photo-section {
         flex-direction: column;
         gap: 25px;
@@ -228,13 +250,14 @@ body {
         max-width: 90%;
     }
 
-    .photo-border {
-        width: 230px;
-        height: 310px;
-    }
-
     .photo img {
         width: 220px;
         height: 300px;
+    }
+
+    .photo::before {
+        inset: -8px;
+        filter: blur(12px);
+        opacity: 0.6;
     }
 }
