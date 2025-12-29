@@ -7,8 +7,8 @@
 body {
     min-height: 100vh;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background-repeat: no-repeat;
     background-image: url(bg.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     line-height: 1.2;
@@ -25,6 +25,9 @@ body {
     justify-content: space-between;
     padding: 0 60px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo img {
@@ -61,16 +64,11 @@ body {
 .side-menu a:hover {
     transform: scale(0.9);
     outline: 3px solid rgb(20, 237, 227);
-    border-radius: 5px;
 }
 
 .hamburger {
-    position: fixed;
-    top: 18px;
-    left: 20px;
-    z-index: 1001;
+    display: none;
 }
-
 
 /* --------------------------
    HERO SECTION
@@ -112,7 +110,7 @@ body {
 }
 
 /* --------------------------
-   SOCIAL ICONS
+   SOCIAL ICONS (DESKTOP / HERO)
 --------------------------- */
 .social-links {
     display: flex;
@@ -136,7 +134,7 @@ body {
 }
 
 /* --------------------------
-   PHOTO GLOW (NO BORDER, NO SHADOW BUG)
+   PHOTO GLOW
 --------------------------- */
 .photo {
     position: relative;
@@ -176,10 +174,15 @@ body {
     border-radius: 18px;
 }
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* --------------------------
+   SIDE MENU SOCIALS (HIDDEN ON DESKTOP)
+--------------------------- */
+.menu-socials {
+    display: none;
+}
+
+.side-menu .mobile-only {
+    display: none !important;
 }
 
 
@@ -190,10 +193,23 @@ body {
 
     .navbar {
         padding: 0 20px;
-        position: sticky;
     }
 
-    /* Hamburger INSIDE navbar */
+    .menu-socials {
+        margin-top: auto;
+    }
+
+    .side-menu .mobile-only {
+        display: flex !important;
+    }
+
+    .menu-socials .social-links img {
+        background: rgba(0, 176, 246, 0.35);
+        padding: 4px;
+        border-radius: 6px;
+        border: none;
+    }
+
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -212,7 +228,6 @@ body {
         border-radius: 3px;
     }
 
-    /* Logo INSIDE navbar (right) */
     .logo {
         position: absolute;
         right: 20px;
@@ -233,7 +248,7 @@ body {
         height: 100%;
         flex-direction: column;
         background: #0A0A0A;
-        padding: 80px 20px;
+        padding: 80px 20px 30px;
         gap: 20px;
         transition: 0.3s;
         z-index: 999;
@@ -256,6 +271,47 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
+    }
+
+    /* Show socials at bottom of side menu */
+    .menu-socials {
+        display: block;
+        margin-top: auto;
+    }
+
+    /* REMOVE styles from side-menu social icons */
+    .menu-socials .social-links img {
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    background: rgba(0, 176, 246, 0.5);
+    border-radius: 6px;
+    border: none;
+    transition: 0.3s;
+}
+
+.menu-socials .social-links img:hover {
+    transform: scale(1.1);
+    background: rgba(0, 176, 246, 0.8);
+}
+
+.menu-socials .social-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+.menu-socials a {
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+    /* Hide hero socials on mobile */
+    .photo-section .social-links {
+        display: none;
     }
 
     /* Hero layout */
