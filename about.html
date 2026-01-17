@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Portfolio</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
 
+    <!-- ================= NAVBAR ================= -->
     <nav class="navbar">
 
         <div class="hamburger">
@@ -22,22 +25,131 @@
 
         <div class="logo">
             <a href="index.html">
-                <img src="logo.png" alt="Logo">
+                <img src="logo.png" alt="Logo" />
             </a>
         </div>
 
         <ul class="side-menu">
+            <li class="mobile-only"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+
+            <li class="menu-socials">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/SaiPrashanth1602" target="_blank">
+                        <img src="github.png" alt="GitHub" />
+                    </a>
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com" target="_blank">
+                        <img src="gmail.png" alt="Email" />
+                    </a>
+                </div>
+            </li>
         </ul>
 
     </nav>
 
-    
+    <!-- ================= ABOUT SECTION ================= -->
+    <main class="about-section">
 
+        <section class="about-hero">
+    <div class="about-wrapper">
+
+        <!-- PHOTO -->
+        <div class="about-photo">
+            <img src="myphoto.png" alt="Sai Prashanth" />
+        </div>
+
+        <!-- CONTENT -->
+        <div class="about-content">
+            <span class="about-label">ABOUT ME</span>
+
+            <h1 class="about-title">
+                Building clean,<br />
+                functional web experiences
+            </h1>
+
+            <p class="about-description">
+                I’m Sai Prashanth, a Software Engineering student at VIT Chennai with a strong
+                interest in building responsive, user-focused web applications.
+            </p>
+
+            <p class="about-description">
+                I enjoy working across the frontend and backend, focusing on clarity,
+                structure, and usability rather than unnecessary complexity.
+            </p>
+<h2 class="about-subtitle">What I Do</h2>
+
+            
+<p class="about-description">
+    I design intuitive user interfaces and build scalable frontend layouts
+    with a focus on usability and performance.
+</p>
+
+<p class="about-description">
+    On the backend, I develop REST APIs, handle authentication,
+    and manage application logic using Node.js and Express.
+</p>
+
+<p class="about-description">
+    I enjoy bringing everything together into complete full-stack applications
+    that solve real problems and are easy to maintain.
+</p>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+        <!-- ===== EXPERTISE ===== -->
+        <section class="about-hero">
+            <div class="about-wrapper">
+
+                <div class="about-content">
+                    <h1 class="about-title">Expertise</h1>
+
+                    <div class="about-expertise">
+
+                        <div class="expertise-card">
+                            <h3>Frontend Development</h3>
+                            <p>
+                                Building responsive layouts and intuitive interfaces using
+                                HTML, CSS, JavaScript, and modern styling practices.
+                            </p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3>Backend Development</h3>
+                            <p>
+                                Developing REST APIs, handling authentication, and managing
+                                server-side logic with Node.js and Express.
+                            </p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3>Full-Stack Projects</h3>
+                            <p>
+                                Integrating frontend and backend systems with MongoDB to
+                                build real-world, end-to-end applications.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= SCRIPT ================= -->
     <script>
         const hamburger = document.querySelector(".hamburger");
         const sideMenu = document.querySelector(".side-menu");

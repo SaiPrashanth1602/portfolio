@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <title>Education | Portfolio</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="hamburger">
@@ -27,16 +30,99 @@
         </div>
 
         <ul class="side-menu">
+            <li class="mobile-only"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+
+            <li class="menu-socials">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/SaiPrashanth1602" target="_blank">
+                        <img src="github.png" alt="GitHub" />
+                    </a>
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com" target="_blank">
+                        <img src="gmail.png" alt="Email" />
+                    </a>
+                </div>
+            </li>
         </ul>
 
     </nav>
 
-    
+    <!-- EDUCATION SECTION -->
+    <main class="education-section">
+
+        <p class="education-subtitle">
+            My academic journey and progress toward graduation.
+        </p>
+
+        <div class="timeline">
+
+            <div class="timeline-item completed">
+                <span class="timeline-year">2023</span>
+                <div class="timeline-content">
+                    <h3>Higher Secondary Education</h3>
+                    <p>
+                        GK Shetty Hindu Vidyalaya<br>
+                        Scored <strong class="score-highlight">93.5%</strong> in Class XII with a strong
+                        foundation in science and mathematics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item completed">
+    <span class="timeline-year">2024</span>
+    <div class="timeline-content">
+        <h3>NEET Examination</h3>
+        <p>
+            Took a dedicated academic year to prepare for NEET 2024,
+            securing <strong class="score-highlight">96.28 percentile</strong>
+            , demonstrating strong analytical ability and discipline.
+        </p>
+    </div>
+</div>
+
+
+
+
+            <div class="timeline-item current">
+    <span class="timeline-year">2026</span>
+    <div class="timeline-content">
+        <h3>Integrated M.Tech – Software Engineering</h3>
+        <p>
+            VIT Chennai<br>
+            Currently in second year with a <strong class="score-highlight">CGPA of 9.03</strong>,
+            actively building full-stack projects and strengthening core
+            software engineering skills.
+        </p>
+    </div>
+</div>
+
+
+
+            
+
+            <!-- GRADUATION -->
+            <div class="timeline-item future">
+                <span class="timeline-year">2029</span>
+                <div class="timeline-content">
+                    <h3>Expected Graduation</h3>
+                    <p>
+                        Integrated M.Tech – Software Engineering<br>
+                        VIT Chennai
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
 
     <script>
         const hamburger = document.querySelector(".hamburger");

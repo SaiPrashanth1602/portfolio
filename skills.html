@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <title>Skills | Portfolio</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="hamburger">
@@ -27,17 +30,96 @@
         </div>
 
         <ul class="side-menu">
+            <li class="mobile-only"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+
+            <li class="menu-socials">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/SaiPrashanth1602" target="_blank">
+                        <img src="github.png" alt="GitHub">
+                    </a>
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com" target="_blank">
+                        <img src="gmail.png" alt="Email">
+                    </a>
+                </div>
+            </li>
         </ul>
 
     </nav>
 
-    
+    <!-- SKILLS SECTION -->
+    <main class="skills-section">
 
+        <p class="skills-subtitle">
+            Technologies and tools I use to build modern web applications.
+        </p>
+
+        <section class="skills-group">
+    <h2>Frontend Development</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">HTML5 (Semantic Markup)</div>
+        <div class="skill-card">CSS3 (Flexbox, Grid, Responsive)</div>
+        <div class="skill-card">JavaScript (ES6+)</div>
+        <div class="skill-card">Responsive & Mobile-First Design</div>
+        <div class="skill-card">UI Component Design</div>
+        <div class="skill-card">Tailwind CSS</div>
+    </div>
+</section>
+
+
+        <!-- BACKEND -->
+        <section class="skills-group">
+    <h2>Backend Development</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">Node.js</div>
+        <div class="skill-card">Express.js</div>
+        <div class="skill-card">RESTful API Design</div>
+        <div class="skill-card">Authentication & Authorization (JWT, OTP)</div>
+        <div class="skill-card">Server-side Validation</div>
+    </div>
+</section>
+
+
+        <!-- DATABASE -->
+        <section class="skills-group">
+    <h2>Databases</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">MongoDB</div>
+        <div class="skill-card">Mongoose ODM</div>
+        <div class="skill-card">CRUD Operations</div>
+        <div class="skill-card">Schema Design</div>
+    </div>
+</section>
+
+
+        <!-- TOOLS -->
+        <section class="skills-group">
+    <h2>Tools & Platforms</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">Git & Version Control</div>
+        <div class="skill-card">GitHub</div>
+        <div class="skill-card">VS Code</div>
+        <div class="skill-card">Postman (API Testing)</div>
+        <div class="skill-card">Render (Backend Deployment)</div>
+        <div class="skill-card">GitHub Pages</div>
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- SCRIPT -->
     <script>
         const hamburger = document.querySelector(".hamburger");
         const sideMenu = document.querySelector(".side-menu");

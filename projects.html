@@ -7,7 +7,9 @@
     <title>PORTFOLIO</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -27,16 +29,141 @@
         </div>
 
         <ul class="side-menu">
+            <li class="mobile-only"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+
+            <li class="menu-socials">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/saiprashanth1602" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/SaiPrashanth1602" target="_blank">
+                        <img src="github.png" alt="GitHub">
+                    </a>
+                    <a href="mailto:saiprashanth.m.ramesh@gmail.com" target="_blank">
+                        <img src="gmail.png" alt="Email">
+                    </a>
+                </div>
+            </li>
+
         </ul>
 
     </nav>
+    <main class="projects-section">
 
-    
+        <!-- Ongoing Projects -->
+        <section class="project-group ongoing-group">
+            <h2 class="projects-subtitle">Ongoing Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card ongoing">
+                    <h3>JILLIO – Online Brownie Ordering Platform</h3>
+
+                    <p>
+                        A real-world team-based full-stack web application built for an
+                        active brownie business, enabling customers to browse products,
+                        place orders, make online payments, and track order status.
+                    </p>
+
+                    <p class="text-sm opacity-70 mt-2">
+                        Role: Backend development, payment integration, authentication,
+                        order processing, and address management
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                        <span>Razorpay</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="btn disabled">In Progress</a>
+                        <a href="https://github.com/ItzYoha/E-Commerce-Platform.git" class="btn secondary">GitHub</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <!-- Completed Projects -->
+        <section class="project-group">
+            <h2 class="projects-subtitle">Completed Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h3>Personal Portfolio Website</h3>
+
+                    <p>
+                        A clean and responsive personal portfolio website designed to showcase
+                        projects, skills, and achievements with a modern UI and smooth layout.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://saiprashanth1602.github.io/portfolio/" class="btn" target="_blank"
+                            rel="noopener noreferrer">
+                            Live Preview
+                        </a>
+                        <a href="https://github.com/SaiPrashanth1602/portfolio.git" class="btn secondary"
+                            target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <h3>Responsive Profile Card UI</h3>
+
+                    <p>
+                        A minimal and visually balanced profile card component focusing on
+                        typography, spacing, and responsive layout design.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://saiprashanth1602.github.io/profile-card/" class="btn" target="_blank"
+                            rel="noopener noreferrer">
+                            Live Preview
+                        </a>
+                        <a href="https://github.com/SaiPrashanth1602/profile-card.git" class="btn secondary"
+                            target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </main>
+
+
+
 
     <script>
         const hamburger = document.querySelector(".hamburger");
