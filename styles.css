@@ -1268,3 +1268,119 @@ body {
     color: #e5e7eb;
     margin: 28px 0 12px;
 }
+/* =========================
+   SUBTLE SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.65;
+}
+
+.scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+    color: #9ca3af;
+}
+
+/* Animated line */
+.scroll-line {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(20, 237, 227),
+        transparent
+    );
+    border-radius: 2px;
+    animation: scrollDown 1.8s ease-in-out infinite;
+}
+
+/* Top → Bottom motion */
+@keyframes scrollDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Desktop only */
+@media (max-width: 1024px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 1; /* brighter */
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    letter-spacing: 1.6px;
+    color: rgb(180, 245, 255); /* brighter text */
+    text-shadow: 0 0 10px rgba(20, 237, 227, 0.6);
+}
+
+/* Brighter animated line */
+.scroll-line {
+    width: 3px; /* thicker */
+    height: 38px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(20, 237, 227),
+        rgb(20, 237, 227),
+        transparent
+    );
+    border-radius: 3px;
+    box-shadow: 
+        0 0 12px rgba(20, 237, 227, 0.9),
+        0 0 24px rgba(20, 237, 227, 0.6);
+    animation: scrollDown 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+/* Desktop only */
+@media (max-width: 1024px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
