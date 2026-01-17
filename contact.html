@@ -119,10 +119,7 @@
 
             </section>
 
-            <!-- Scroll indicator -->
-            <div class="scroll-indicator">
-                <span></span>
-            </div>
+            
 
         </section>
 
@@ -135,20 +132,6 @@
 
         hamburger.addEventListener("click", () => {
             sideMenu.classList.toggle("active");
-        });
-
-        // Auto-hide navbar (Apple-style)
-        let lastScroll = 0;
-        const navbar = document.querySelector(".navbar");
-
-        window.addEventListener("scroll", () => {
-            const currentScroll = window.scrollY;
-            if (currentScroll > lastScroll) {
-                navbar.style.transform = "translateY(-100%)";
-            } else {
-                navbar.style.transform = "translateY(0)";
-            }
-            lastScroll = currentScroll;
         });
     </script>
 
