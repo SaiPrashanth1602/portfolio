@@ -58,59 +58,98 @@
     <main class="about-section">
 
         <section class="about-hero">
-    <div class="about-wrapper">
+            <div class="about-wrapper">
 
-        <!-- PHOTO -->
-        <div class="about-photo">
-            <img src="myphoto.png" alt="Sai Prashanth" />
-        </div>
+    <div class="about-photo">
+        <img src="myphoto.png" alt="Sai Prashanth" />
+    </div>
 
-        <!-- CONTENT -->
-        <div class="about-content">
-            <span class="about-label">ABOUT ME</span>
+    <div class="about-content">
+        <span class="about-label">ABOUT ME</span>
 
-            <h1 class="about-title">
-                Building clean,<br />
-                functional web experiences
-            </h1>
+        <h1 class="about-title">
+            Building clean,<br />
+            functional web experiences
+        </h1>
+
+        <p class="about-description">
+            I’m Sai Prashanth, a Software Engineering student at VIT Chennai with a strong
+            interest in building responsive, user-focused web applications.
+        </p>
+
+        <div class="what-i-do">
+            <h2 class="about-subtitle">What I Do</h2>
 
             <p class="about-description">
-                I’m Sai Prashanth, a Software Engineering student at VIT Chennai with a strong
-                interest in building responsive, user-focused web applications.
+                I design intuitive user interfaces and build scalable frontend layouts
+                with a focus on usability and performance.
             </p>
 
-            
-<h2 class="about-subtitle">What I Do</h2>
+            <p class="about-description">
+                On the backend, I develop REST APIs, handle authentication,
+                and manage application logic using Node.js and Express.
+            </p>
 
-            
-<p class="about-description">
-    I design intuitive user interfaces and build scalable frontend layouts
-    with a focus on usability and performance.
-</p>
-
-<p class="about-description">
-    On the backend, I develop REST APIs, handle authentication,
-    and manage application logic using Node.js and Express.
-</p>
-
-<p class="about-description">
-    I enjoy bringing everything together into complete full-stack applications
-    that solve real problems and are easy to maintain.
-</p>
-
-
+            <p class="about-description">
+                I enjoy bringing everything together into complete full-stack applications
+                that solve real problems and are easy to maintain.
+            </p>
         </div>
-
     </div>
-<div class="scroll-indicator">
-    <div class="scroll-line"></div>
-        <span>Scroll</span>
 
 </div>
 
 
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
 
-</section>
+
+        <!-- ===== PATENT & RESEARCH ===== -->
+        <section class="about-hero about-center patent-section">
+
+            <!-- glow divider -->
+            <div class="patent-divider"></div>
+
+            <div class="about-wrapper">
+                <div class="about-content">
+
+                    <h1 class="about-title">Patent Work</h1>
+                    <span class="patent-badge">Patent in Progress</span>
+
+                    <p class="about-description">
+                        I am currently working on a patent aimed at improving passenger safety
+                        by preventing door-opening accidents in stationary or slow-moving vehicles,
+                        especially in two-wheeler-dense traffic conditions.
+                    </p>
+
+                    <p class="about-description">
+                        The system focuses on intelligently detecting potential risk situations
+                        before a vehicle door is opened and alerting the occupant in real time.
+                        It is designed to be low-cost, retrofittable, and suitable for real-world deployment.
+                    </p>
+
+                    <p class="about-description">
+                        My contribution includes problem identification, system-level design,
+                        sensor integration strategy, feasibility analysis, and technical documentation
+                        aligned with patent filing standards.
+                    </p>
+
+                    <p class="about-description">
+                        Detailed technical implementation is intentionally limited on this site
+                        due to the ongoing patent process.
+                    </p>
+
+                    <a href="projects.html" class="patent-link">
+                        View Related Project →
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
 
 
         <!-- ===== EXPERTISE ===== -->
@@ -156,20 +195,50 @@
 
     <!-- ================= SCRIPT ================= -->
     <script>
-    const hamburger = document.querySelector(".hamburger");
-    const sideMenu = document.querySelector(".side-menu");
-    const scrollIndicator = document.querySelector(".scroll-indicator");
+        const hamburger = document.querySelector(".hamburger");
+        const sideMenu = document.querySelector(".side-menu");
+        const scrollIndicator = document.querySelector(".scroll-indicator");
 
-    hamburger.addEventListener("click", () => {
-        sideMenu.classList.toggle("active");
-    });
+        hamburger.addEventListener("click", () => {
+            sideMenu.classList.toggle("active");
+        });
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 30 && scrollIndicator) {
-            scrollIndicator.style.opacity = "0";
-            scrollIndicator.style.pointerEvents = "none";
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 30 && scrollIndicator) {
+                scrollIndicator.style.opacity = "0";
+                scrollIndicator.style.pointerEvents = "none";
+            }
+        });
+    </script>
+<script>
+    function reorderAboutSection() {
+        const isMobile = window.innerWidth <= 1024;
+
+        const wrapper = document.querySelector(".about-wrapper");
+        const photo = document.querySelector(".about-photo");
+        const whatIDo = document.querySelector(".what-i-do");
+        const content = document.querySelector(".about-content");
+
+        if (!wrapper || !photo || !whatIDo || !content) return;
+
+        if (isMobile) {
+            // Move "What I Do" AFTER photo on mobile
+            if (photo.nextElementSibling !== whatIDo) {
+                wrapper.insertBefore(whatIDo, photo.nextSibling);
+            }
+        } else {
+            // Move it BACK inside content on desktop
+            if (!content.contains(whatIDo)) {
+                content.appendChild(whatIDo);
+            }
         }
-    });
+    }
+
+    // Run on load
+    reorderAboutSection();
+
+    // Run on resize
+    window.addEventListener("resize", reorderAboutSection);
 </script>
 
 
